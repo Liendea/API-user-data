@@ -240,3 +240,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Anropa fetchUserData  för att starta processen
   fetchUserData();
 });
+
+const login_logo = document.querySelector(".user-logo");
+const login_dropdown = document.querySelector(".login-dropdown");
+login_logo.addEventListener("click", () => {
+  login_dropdown.classList.toggle("visible");
+});

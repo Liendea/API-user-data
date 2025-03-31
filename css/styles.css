@@ -14,10 +14,7 @@ body {
 header,
 footer {
   width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 250px;
 }
 
 header {
@@ -33,7 +30,101 @@ header h1,
 footer h1 {
   font-size: 5rem;
   color: white;
-  text-align: center;
+  line-height: 0.8;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+#sign-up {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  width: 80px;
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  margin: 0;
+  background-color: transparent;
+}
+
+#sign-up:hover {
+  color: black;
+  background-color: white;
+}
+
+.user-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 3.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.login-container button {
+  padding: 5px;
+  border-radius: 10px;
+  width: 80px;
+  border: 1px solid white;
+  outline: none;
+  margin-top: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+}
+
+button:hover {
+  color: black;
+  background-color: white;
+}
+
+.login-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  opacity: 0%;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+}
+
+.visible {
+  top: 50px;
+  right: 0px;
+  visibility: visible;
+  opacity: 100%;
+}
+
+input {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
 }
 
 @media (max-width: 900px) {
@@ -119,12 +210,13 @@ main {
 }
 
 .expand-btn {
-  background-color: white;
+  background-color: transparent;
   outline: none;
   border: 1px solid rgba(128, 128, 128, 0.242);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 5px 10px 5px 10px;
   cursor: pointer;
+  color: black;
 }
 .expand-btn:hover {
   border: 1px solid pink;
@@ -168,7 +260,7 @@ main {
 .see-all-posts {
   color: black;
   text-align: left;
-  align-self: flex-end;
+  align-self: center;
   margin-bottom: 1rem;
   cursor: pointer;
 }
@@ -237,6 +329,7 @@ main {
   /* Posts */
   #posts-section {
     width: 100%;
+    padding: 1rem;
   }
 
   .posts {
