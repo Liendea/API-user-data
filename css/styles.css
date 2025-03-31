@@ -5,29 +5,22 @@
 }
 
 body {
-  background-color: rgb(255, 182, 193);
-  height: 100vh;
+  height: 100%;
   font-family: "poppins";
   width: 100%;
+  background-image: linear-gradient(rgb(255, 182, 193), rgb(233, 191, 255));
+  background-size: cover;
 }
 
-header,
-footer {
+/* ----------------------------------*/
+/* ------------ HEADER -------------*/
+header {
   width: 100%;
   height: 250px;
+  background-color: #9c9b9b48;
 }
 
-header {
-  background-image: linear-gradient(rgb(233, 191, 255), rgb(255, 182, 193));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.381);
-}
-footer {
-  background-image: linear-gradient(rgb(255, 182, 193), rgb(233, 191, 255));
-  border-top: 1px solid rgba(255, 255, 255, 0.381);
-}
-
-header h1,
-footer h1 {
+header h1 {
   font-size: 5rem;
   color: white;
   line-height: 0.8;
@@ -129,14 +122,66 @@ input {
 
 @media (max-width: 900px) {
   header h1,
-  footer h1 {
+  footer h2 {
     font-size: 3rem;
   }
 }
+
+/* ----------------------------------*/
+/* ------------ FOOTER  -------------*/
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #9c9b9b48;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.footer-logo h2 {
+  font-size: 5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #9c9b9b48;
+}
+
+.footer-links a {
+  margin: 1rem;
+  color: black;
+  text-decoration: none;
+}
+.footer-links p {
+  margin: 1rem;
+  color: rgb(100, 100, 100);
+}
+
+.footer-links a:hover {
+  font-weight: 500;
+}
+
+/* ----------------------------------*/
+/* --------- MAIN SECTION ------------*/
+
 main {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 
   width: 100%;
   height: auto;
@@ -146,14 +191,13 @@ main {
 /* --------- USER SECTION -----------*/
 
 #user-section {
-  width: 50%;
+  width: clamp(500px, 30%, 500px);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-
+  margin-top: 8px;
   padding: 1rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.381);
 }
 
 .users-container {
@@ -207,6 +251,7 @@ main {
   grid-column: 3;
   grid-row: 4;
   align-self: flex-end;
+  margin-top: 0.5rem;
 }
 
 .expand-btn {
@@ -249,44 +294,30 @@ main {
 
 #posts-section {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-direction: column;
-  width: 60%;
-  padding: 1rem;
-}
+  align-items: center;
 
-/* see all post button */
-.see-all-posts {
-  color: black;
-  text-align: left;
-  align-self: center;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-
-.see-all-posts:hover {
-  font-weight: 500;
+  width: 70%;
 }
 
 /*  posts container */
 .posts-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  width: 90%;
+  width: 100%;
 }
 
 /* post */
 .post {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 45%;
+
   height: auto;
   background-color: #fff;
-  margin-bottom: 1rem;
+  margin: 0.5rem;
   padding: 1rem;
 }
 
@@ -314,6 +345,20 @@ main {
   cursor: pointer;
   width: 90%;
   margin-top: 0.5rem;
+}
+
+/* see all post button */
+.see-all-posts {
+  color: black;
+  text-align: left;
+  align-self: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.see-all-posts:hover {
+  font-weight: 500;
 }
 
 /* --------------------------------------*/
@@ -372,6 +417,23 @@ main {
   }
 }
 
+@media (max-width: 700px) {
+  .footer-links a {
+    font-size: 14px;
+    margin: 10px;
+  }
+  .footer-links p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1300px) {
+  /* post */
+  .post {
+    width: 100%;
+  }
+}
+
 /* ----------------------------------*/
 /* ----------- UTILITIES--------------*/
 
@@ -394,7 +456,7 @@ hr {
 /* text */
 h2 {
   color: rgba(255, 255, 255, 0.496);
-  font-size: 42px;
+  font-size: 58px;
   text-align: center;
   margin: 2rem 0 1rem 0;
 }
